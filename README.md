@@ -8,9 +8,45 @@
 </p>
 
 # Installation
-## Cloner le projet
+### Installation du projet
 ```bash
-git clone 
+git clone git@github.com:Cedric331/mink.git
+
+Rendez-vous ensuite dans le dossier du projet puis exécutez les commandes suivantes :
+
+composer install
+npm install && npm run dev
+cp .env.example .env
+php artisan storage:link
+
+```
+
+### Configuration du fichier .env
+L'utilisation de Laravel Filament nécessite d'indiquer l'url exacte de l'application dans le fichier .env
+```bash
+APP_URL=http://127.0.0.1:8000
+```
+
+### Configuration de la base de données
+Créer une base de données puis ajouter les informations de connexion dans le fichier .env
+Une fois les informations de connexion ajoutées, exécutez la commande suivante pour migrer les tables de la base de données :
+```bash
+php artisan migrate --seed
+```
+Le seed permet de remplir la base de données avec des données concernant les rôles.
+
+### Création d'un utilisateur administrateur
+Pour créer un utilisateur administrateur, exécutez la commande suivante :
+```bash
+php artisan app:create-admin
+```
+Une fois l'utilisateur créé, vous pouvez accéder à l'administration en vous rendant sur la page /admin
+
+### Technologies utilisées
+- Laravel 11 https://laravel.com/
+- Vue.js 3 https://v3.vuejs.org/
+- Inertia.js https://inertiajs.com/
+- Laravel Filament https://filamentphp.com/
 
 
 ## Contributing
